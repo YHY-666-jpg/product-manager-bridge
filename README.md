@@ -145,12 +145,6 @@ Open this folder in VS Code, press `F5`, and choose the Product Manager Bridge e
 - The extension requires user confirmation before sending approved plans to Roo Code or Codex.
 - Product Manager Bridge does not modify project files itself.
 
-## Publishing
-
-See [docs/PUBLISHING.md](docs/PUBLISHING.md) for GitHub open source release and local VSIX build steps.
-
-Before creating a public GitHub release, replace the placeholder repository URLs in `package.json` with your real GitHub organization or account.
-
 ## License
 
 MIT
