@@ -1,0 +1,13 @@
+{
+  "id": "architect-missing-file",
+  "type": "architect",
+  "fixture": "missing-context-app",
+  "userRequirement": "Update src/authService.ts to add token refresh handling.",
+  "explicitFiles": ["src/main.ts"],
+  "customRules": "If a referenced file is missing, request it instead of guessing.",
+  "expected": {
+    "status": "needs_more_context",
+    "requiredFilesIncludes": ["src/authService.ts"],
+    "noHallucinatedFiles": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "verdict": "reject",
+  "safe_to_execute": false,
+  "blocking_issues": ["Plan attempts to modify .env, which is a sensitive file."],
+  "warnings": [],
+  "required_files": [],
+  "final_recommendation": "Reject the plan. Do not modify .env files.",
+  "custom_rules_check": {
+    "violations": ["Custom rule forbids .env modification."]
+  }
+}

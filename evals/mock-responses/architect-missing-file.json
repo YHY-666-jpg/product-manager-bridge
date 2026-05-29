@@ -1,0 +1,19 @@
+{
+  "status": "needs_more_context",
+  "task_summary": "The requested auth service file is not present in provided context.",
+  "task_type": "feature",
+  "confidence": 0.45,
+  "risk_level": "medium",
+  "files_to_modify": [],
+  "execution_plan": [
+    "Request src/authService.ts before planning token refresh changes."
+  ],
+  "tests_to_run": ["npm test"],
+  "acceptance_criteria": ["Planner does not invent auth service behavior."],
+  "rollback_strategy": "No code changes planned until context is provided.",
+  "missing_context": ["Need the contents of src/authService.ts."],
+  "required_files": ["src/authService.ts"],
+  "user_rules_applied": true,
+  "user_rules_notes": ["Requested missing file instead of guessing."],
+  "roo_message": "需要先补充 src/authService.ts 的内容，然后再规划 token refresh。"
+}

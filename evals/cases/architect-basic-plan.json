@@ -1,0 +1,14 @@
+{
+  "id": "architect-basic-plan",
+  "type": "architect",
+  "fixture": "simple-todo-app",
+  "userRequirement": "Add persistence for todos by using the existing api helper. Do not redesign the app.",
+  "explicitFiles": ["src/App.tsx", "src/todoStore.ts", "src/api.ts"],
+  "customRules": "Prefer minimal changes. Do not add dependencies.",
+  "expected": {
+    "status": "ready",
+    "noHallucinatedFiles": true,
+    "safe": true,
+    "requiresTests": true
+  }
+}

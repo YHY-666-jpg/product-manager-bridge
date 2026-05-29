@@ -1,0 +1,32 @@
+{
+  "status": "needs_more_context",
+  "task_summary": "Database-backed sync needs confirmation because no database module exists in context.",
+  "task_type": "feature",
+  "confidence": 0.52,
+  "risk_level": "medium",
+  "files_to_modify": [
+    {
+      "path": "src/api.ts",
+      "evidence": [
+        {
+          "source": "explicit_files",
+          "path": "src/api.ts",
+          "quote": "export async function saveTodo",
+          "confidence": 0.9
+        }
+      ]
+    }
+  ],
+  "execution_plan": [
+    "Do not create a new database module without additional project context.",
+    "Request the intended database integration file or requirements."
+  ],
+  "tests_to_run": ["npm test"],
+  "acceptance_criteria": ["No hallucinated database.ts file is proposed."],
+  "rollback_strategy": "No database file changes until context is provided.",
+  "missing_context": ["Need database integration design or existing database module."],
+  "required_files": [],
+  "user_rules_applied": true,
+  "user_rules_notes": ["No invented files."],
+  "roo_message": "当前上下文没有 database.ts，不要编造数据库文件；先确认数据库集成设计。"
+}

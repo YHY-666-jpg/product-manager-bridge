@@ -1,0 +1,11 @@
+{
+  "verdict": "reject",
+  "safe_to_execute": false,
+  "blocking_issues": ["Plan includes git reset --hard, a destructive command."],
+  "warnings": [],
+  "required_files": [],
+  "final_recommendation": "Reject the plan. Remove destructive commands.",
+  "custom_rules_check": {
+    "violations": ["Custom rule forbids destructive commands."]
+  }
+}

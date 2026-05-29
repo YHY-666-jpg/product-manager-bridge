@@ -1,0 +1,212 @@
+body {
+  color: var(--vscode-foreground);
+  background: var(--vscode-sideBar-background);
+  font-family: var(--vscode-font-family);
+  padding: 12px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+
+h3 {
+  font-size: 13px;
+  margin: 0;
+}
+
+header p {
+  color: var(--vscode-descriptionForeground);
+  margin: 4px 0 12px;
+}
+
+section,
+article {
+  border: 1px solid var(--vscode-sideBarSectionHeader-border);
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+label,
+summary {
+  display: block;
+  font-weight: 600;
+  margin: 14px 0 7px;
+}
+
+textarea,
+input,
+select {
+  box-sizing: border-box;
+  width: 100%;
+  color: var(--vscode-input-foreground);
+  background: var(--vscode-input-background);
+  border: 1px solid var(--vscode-input-border);
+  border-radius: 3px;
+  min-height: 38px;
+  padding: 8px 12px;
+}
+
+select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--vscode-descriptionForeground) 50%), linear-gradient(135deg, var(--vscode-descriptionForeground) 50%, transparent 50%);
+  background-position: calc(100% - 21px) 16px, calc(100% - 14px) 16px;
+  background-repeat: no-repeat;
+  background-size: 7px 7px, 7px 7px;
+  border-radius: 20px;
+  padding-right: 36px;
+}
+
+button {
+  color: var(--vscode-button-foreground);
+  background: var(--vscode-button-background);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 6px 6px 0 0;
+  padding: 7px 10px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+pre {
+  background: var(--vscode-textCodeBlock-background);
+  border-radius: 4px;
+  max-height: 360px;
+  overflow: auto;
+  padding: 8px;
+  white-space: pre-wrap;
+}
+
+.grid {
+  display: grid;
+  gap: 8px;
+}
+
+.model-section {
+  border: 0;
+  padding: 0;
+}
+
+.provider-card {
+  background: var(--vscode-sideBar-background);
+  border-color: var(--vscode-input-border);
+  padding: 12px;
+}
+
+.provider-header,
+.provider-actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.provider-header a {
+  color: var(--vscode-textLink-foreground);
+  text-decoration: none;
+}
+
+.provider-actions {
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.key-state {
+  color: var(--vscode-descriptionForeground);
+  flex: 1 1 auto;
+  min-width: 104px;
+}
+
+.checkbox-row {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.checkbox-row input {
+  min-height: 0;
+  width: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.status {
+  color: var(--vscode-descriptionForeground);
+  margin-top: 8px;
+  min-height: 18px;
+}
+
+.stage-banner {
+  background: var(--vscode-editorWidget-background);
+  border: 1px solid var(--vscode-focusBorder);
+  border-left: 5px solid var(--vscode-focusBorder);
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 10px 12px;
+}
+
+.stage-eyebrow {
+  color: var(--vscode-descriptionForeground);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.stage-title {
+  color: var(--vscode-foreground);
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.stage-message {
+  color: var(--vscode-descriptionForeground);
+  line-height: 1.35;
+  margin-top: 4px;
+}
+
+.stage-banner.architect_thinking,
+.stage-banner.validator_checking,
+.stage-banner.policy_checking,
+.stage-banner.collecting_context,
+.stage-banner.reading_required_files {
+  background: var(--vscode-inputValidation-infoBackground);
+  border-color: var(--vscode-inputValidation-infoBorder);
+  border-left-color: var(--vscode-progressBar-background);
+}
+
+.stage-banner.approved,
+.stage-banner.complete {
+  border-color: var(--vscode-testing-iconPassed);
+  border-left-color: var(--vscode-testing-iconPassed);
+}
+
+.stage-banner.rejected,
+.stage-banner.error {
+  background: var(--vscode-inputValidation-errorBackground);
+  border-color: var(--vscode-inputValidation-errorBorder);
+  border-left-color: var(--vscode-errorForeground);
+}
+
+.stage-banner.needs_revision,
+.stage-banner.needs_input {
+  background: var(--vscode-inputValidation-warningBackground);
+  border-color: var(--vscode-inputValidation-warningBorder);
+  border-left-color: var(--vscode-editorWarning-foreground);
+}

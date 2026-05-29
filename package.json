@@ -1,0 +1,291 @@
+{
+  "name": "product-manager-bridge",
+  "displayName": "Product Manager Bridge",
+  "description": "Plan-first AI engineering bridge for VS Code, Roo Code, and Codex.",
+  "version": "0.1.0",
+  "publisher": "YHY-666-jpg",
+  "author": "Yao haoyuan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YHY-666-jpg/product-manager-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YHY-666-jpg/product-manager-bridge/issues"
+  },
+  "homepage": "https://github.com/YHY-666-jpg/product-manager-bridge#readme",
+  "keywords": [
+    "pm",
+    "planning",
+    "architect",
+    "validator",
+    "roo-code",
+    "codex",
+    "deepseek",
+    "ai"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onView:pmBridge.mainView",
+    "onCommand:pmBridge.openPanel",
+    "onCommand:pmBridge.sendToCodex"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "pmBridge.openPanel",
+        "title": "Product Manager Bridge: Open Panel"
+      },
+      {
+        "command": "pmBridge.generatePlan",
+        "title": "Product Manager Bridge: Generate Plan"
+      },
+      {
+        "command": "pmBridge.copyLastPlan",
+        "title": "Product Manager Bridge: Copy Last Plan"
+      },
+      {
+        "command": "pmBridge.saveLastPlan",
+        "title": "Product Manager Bridge: Save Last Plan"
+      },
+      {
+        "command": "pmBridge.sendToRoo",
+        "title": "Product Manager Bridge: Send to Roo Code"
+      },
+      {
+        "command": "pmBridge.sendToCodex",
+        "title": "Product Manager Bridge: Send to Codex"
+      },
+      {
+        "command": "pmBridge.openModelSettings",
+        "title": "Product Manager Bridge: Open Model Settings"
+      },
+      {
+        "command": "pmBridge.setArchitectApiKey",
+        "title": "Product Manager Bridge: Set Architect API Key"
+      },
+      {
+        "command": "pmBridge.clearArchitectApiKey",
+        "title": "Product Manager Bridge: Clear Architect API Key"
+      },
+      {
+        "command": "pmBridge.setValidatorApiKey",
+        "title": "Product Manager Bridge: Set Validator API Key"
+      },
+      {
+        "command": "pmBridge.clearValidatorApiKey",
+        "title": "Product Manager Bridge: Clear Validator API Key"
+      },
+      {
+        "command": "pmBridge.testArchitectProvider",
+        "title": "Product Manager Bridge: Test Architect Provider"
+      },
+      {
+        "command": "pmBridge.testValidatorProvider",
+        "title": "Product Manager Bridge: Test Validator Provider"
+      },
+      {
+        "command": "pmBridge.editCustomRules",
+        "title": "Product Manager Bridge: Edit Custom Rules"
+      },
+      {
+        "command": "pmBridge.saveCustomRules",
+        "title": "Product Manager Bridge: Save Custom Rules"
+      },
+      {
+        "command": "pmBridge.resetCustomRules",
+        "title": "Product Manager Bridge: Reset Custom Rules"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "pmBridge",
+          "title": "Product Manager Bridge",
+          "icon": "resources/pmbridge.svg"
+        }
+      ]
+    },
+    "views": {
+      "pmBridge": [
+        {
+          "id": "pmBridge.mainView",
+          "name": "Product Manager Bridge",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Product Manager Bridge",
+      "properties": {
+        "pmBridge.architect.providerName": {
+          "type": "string",
+          "default": "DeepSeek"
+        },
+        "pmBridge.architect.format": {
+          "type": "string",
+          "enum": [
+            "openai-compatible",
+            "anthropic-compatible"
+          ],
+          "default": "openai-compatible"
+        },
+        "pmBridge.architect.baseUrl": {
+          "type": "string",
+          "default": "https://api.deepseek.com"
+        },
+        "pmBridge.architect.model": {
+          "type": "string",
+          "default": "deepseek-v4-pro"
+        },
+        "pmBridge.architect.temperature": {
+          "type": "number",
+          "default": 0.2,
+          "minimum": 0,
+          "maximum": 2
+        },
+        "pmBridge.architect.maxTokens": {
+          "type": "number",
+          "default": 8192,
+          "minimum": 1
+        },
+        "pmBridge.architect.jsonMode": {
+          "type": "boolean",
+          "default": true
+        },
+        "pmBridge.validator.providerName": {
+          "type": "string",
+          "default": "DeepSeek"
+        },
+        "pmBridge.validator.format": {
+          "type": "string",
+          "enum": [
+            "openai-compatible",
+            "anthropic-compatible"
+          ],
+          "default": "openai-compatible"
+        },
+        "pmBridge.validator.baseUrl": {
+          "type": "string",
+          "default": "https://api.deepseek.com"
+        },
+        "pmBridge.validator.model": {
+          "type": "string",
+          "default": "deepseek-v4-flash"
+        },
+        "pmBridge.validator.temperature": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 2
+        },
+        "pmBridge.validator.maxTokens": {
+          "type": "number",
+          "default": 4096,
+          "minimum": 1
+        },
+        "pmBridge.validator.jsonMode": {
+          "type": "boolean",
+          "default": true
+        },
+        "pmBridge.provider.customHeaders": {
+          "type": "object",
+          "default": {}
+        },
+        "pmBridge.provider.requestTimeoutMs": {
+          "type": "number",
+          "default": 120000
+        },
+        "pmBridge.provider.maxRetries": {
+          "type": "number",
+          "default": 2
+        },
+        "pmBridge.context.maxFileChars": {
+          "type": "number",
+          "default": 40000
+        },
+        "pmBridge.context.maxTotalChars": {
+          "type": "number",
+          "default": 250000
+        },
+        "pmBridge.context.maxTreeDepth": {
+          "type": "number",
+          "default": 4
+        },
+        "pmBridge.context.maxTreeEntries": {
+          "type": "number",
+          "default": 300
+        },
+        "pmBridge.context.maxVisibleEditors": {
+          "type": "number",
+          "default": 5
+        },
+        "pmBridge.safety.requireConfirmation": {
+          "type": "boolean",
+          "default": true
+        },
+        "pmBridge.safety.maxPlannerLoops": {
+          "type": "number",
+          "default": 2
+        },
+        "pmBridge.rooCommand": {
+          "type": "string",
+          "default": "roo-cline.newTask"
+        },
+        "pmBridge.codex.delivery": {
+          "type": "string",
+          "enum": [
+            "vscode-implement-todo",
+            "vscode-sidebar",
+            "vscode-panel",
+            "prompt-file",
+            "clipboard"
+          ],
+          "default": "vscode-sidebar",
+          "description": "How Product Manager Bridge hands validated plans to the VS Code Codex extension. vscode-sidebar opens Codex and copies the task to clipboard. vscode-implement-todo is an experimental one-click mode."
+        },
+        "pmBridge.codex.outboxDir": {
+          "type": "string",
+          "default": ".pmbridge/outbox"
+        },
+        "pmBridge.customRules.enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "pmBridge.customRules.text": {
+          "type": "string",
+          "default": ""
+        },
+        "pmBridge.customRules.maxChars": {
+          "type": "number",
+          "default": 8000
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./ && node scripts/copy-assets.mjs",
+    "watch": "tsc -watch -p ./",
+    "test": "vitest run",
+    "eval:prompts": "tsx evals/run-evals.ts --live",
+    "eval:prompts:mock": "tsx evals/run-evals.ts --mock",
+    "package": "npx --yes @vscode/vsce package"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/vscode": "^1.90.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.3",
+    "vitest": "^1.6.0"
+  }
+}

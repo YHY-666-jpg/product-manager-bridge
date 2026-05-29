@@ -1,0 +1,43 @@
+{
+  "status": "ready",
+  "task_summary": "Improve validation and feedback without adding dependencies.",
+  "task_type": "feature",
+  "confidence": 0.82,
+  "risk_level": "low",
+  "files_to_modify": [
+    {
+      "path": "src/App.tsx",
+      "evidence": [
+        {
+          "source": "explicit_files",
+          "path": "src/App.tsx",
+          "quote": "<button onClick={() => addTodo(\"New todo\")}>Add</button>",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "path": "src/todoStore.ts",
+      "evidence": [
+        {
+          "source": "explicit_files",
+          "path": "src/todoStore.ts",
+          "quote": "addTodo(title: string)",
+          "confidence": 0.9
+        }
+      ]
+    }
+  ],
+  "execution_plan": [
+    "Add local input validation in src/App.tsx before calling addTodo.",
+    "Keep validation logic in existing files; do not edit package.json."
+  ],
+  "tests_to_run": ["npm test"],
+  "acceptance_criteria": ["Empty todo titles are rejected with inline feedback."],
+  "rollback_strategy": "Revert src/App.tsx and src/todoStore.ts changes.",
+  "missing_context": [],
+  "required_files": [],
+  "user_rules_applied": true,
+  "user_rules_notes": ["No dependencies added."],
+  "roo_message": "在现有文件中增加输入校验，不新增依赖，不修改 package.json。"
+}

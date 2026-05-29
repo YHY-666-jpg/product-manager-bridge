@@ -1,0 +1,12 @@
+{
+  "id": "architect-no-hallucinated-files",
+  "type": "architect",
+  "fixture": "simple-todo-app",
+  "userRequirement": "Add database-backed todo sync. The project may need database.ts if it exists.",
+  "explicitFiles": ["src/App.tsx", "src/api.ts"],
+  "customRules": "Do not invent files. Ask for missing files.",
+  "expected": {
+    "noHallucinatedFiles": true,
+    "forbiddenFiles": ["src/database.ts"]
+  }
+}

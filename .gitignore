@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.vsix
+.pmbridge/
+coverage/
+.vscode-test/
+evals/reports/
+*.log
+debug-pmbridge.log
+.env
+.env.*
+!.env.example
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

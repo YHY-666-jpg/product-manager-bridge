@@ -1,0 +1,52 @@
+{
+  "status": "ready",
+  "task_summary": "Persist todos using the existing API helper with minimal changes.",
+  "task_type": "feature",
+  "confidence": 0.86,
+  "risk_level": "low",
+  "files_to_modify": [
+    {
+      "path": "src/todoStore.ts",
+      "evidence": [
+        {
+          "source": "explicit_files",
+          "path": "src/todoStore.ts",
+          "quote": "export function useTodos()",
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "path": "src/api.ts",
+      "evidence": [
+        {
+          "source": "explicit_files",
+          "path": "src/api.ts",
+          "quote": "export async function saveTodo",
+          "confidence": 0.95
+        }
+      ]
+    }
+  ],
+  "execution_plan": [
+    {
+      "step": "Wire src/todoStore.ts addTodo to call saveTodo from src/api.ts after local state update.",
+      "evidence": [
+        {
+          "source": "explicit_files",
+          "path": "src/api.ts",
+          "quote": "await fetch(\"/api/todos\"",
+          "confidence": 0.9
+        }
+      ]
+    }
+  ],
+  "tests_to_run": ["npm test"],
+  "acceptance_criteria": ["Adding a todo updates UI and calls the existing save API."],
+  "rollback_strategy": "Revert src/todoStore.ts and src/api.ts changes.",
+  "missing_context": [],
+  "required_files": [],
+  "user_rules_applied": true,
+  "user_rules_notes": ["No new dependencies required."],
+  "roo_message": "请在 src/todoStore.ts 中复用 src/api.ts 的 saveTodo 持久化 todo，保持最小改动，并运行 npm test。"
+}

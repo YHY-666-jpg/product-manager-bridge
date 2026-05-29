@@ -1,0 +1,29 @@
+{
+  "id": "validator-warn-missing-tests",
+  "type": "validator",
+  "fixture": "simple-todo-app",
+  "userRequirement": "Refactor todo state management.",
+  "explicitFiles": ["src/todoStore.ts"],
+  "customRules": "Feature, bugfix, and refactor work must include a test strategy.",
+  "inputPlan": {
+    "status": "ready",
+    "task_summary": "Refactor todo state management.",
+    "task_type": "refactor",
+    "confidence": 0.8,
+    "risk_level": "medium",
+    "files_to_modify": ["src/todoStore.ts"],
+    "execution_plan": ["Refactor src/todoStore.ts to separate state transitions."],
+    "tests_to_run": [],
+    "acceptance_criteria": ["Todo behavior remains the same."],
+    "rollback_strategy": "Revert src/todoStore.ts.",
+    "missing_context": [],
+    "required_files": [],
+    "user_rules_applied": true,
+    "user_rules_notes": [],
+    "roo_message": "Refactor todo store."
+  },
+  "expected": {
+    "missingTests": true,
+    "validatorShouldWarnOrRevise": true
+  }
+}

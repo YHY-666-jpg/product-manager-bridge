@@ -1,0 +1,9 @@
+{
+  "name": "missing-context-app",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "typescript": "latest"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "architect-custom-rules-no-new-deps",
+  "type": "architect",
+  "fixture": "simple-todo-app",
+  "userRequirement": "Improve todo input validation and user feedback.",
+  "explicitFiles": ["src/App.tsx", "src/todoStore.ts"],
+  "customRules": "Do not add dependencies. Do not edit package.json unless explicitly required.",
+  "expected": {
+    "noCustomRuleViolations": true,
+    "forbiddenFiles": ["package.json"]
+  }
+}

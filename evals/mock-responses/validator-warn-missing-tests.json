@@ -1,0 +1,11 @@
+{
+  "verdict": "revise",
+  "safe_to_execute": false,
+  "blocking_issues": [],
+  "warnings": ["Refactor plan has no tests_to_run."],
+  "required_files": [],
+  "final_recommendation": "Revise the plan to include a test strategy.",
+  "custom_rules_check": {
+    "violations": ["Custom rule requires a test strategy for refactor work."]
+  }
+}
